@@ -4,9 +4,9 @@ class Paper{
     var options = {
         
         'isStatic' : false,
-        'restitution' : 0.3,
+        'restitution' : 0.1,
         'friction' :0,
-        'density' :1.2
+        'density' :7.5
 
     }
     this.image = loadImage("paper.png");
@@ -22,10 +22,11 @@ class Paper{
 	{
 			var paperpos=this.body.position;		
 			push()
-			translate(paperpos.x, paperpos.y);
+			//translate(paperpos.x, paperpos.y);
 			rectMode(CENTER)			
-			fill("white");		
-            ellipse(0,0,this.r,this.r);
+      image(this.image,paperpos.x,paperpos.y,this.r*1,this.r*1);
+			//fill("white");		
+        //    ellipse(0,0,this.r,this.r); 
 
 
 			pop()
